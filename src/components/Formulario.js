@@ -50,7 +50,7 @@ const Error = styled.div`
     text-align: center;
     margin-bottom: 2rem;
 `;
-const Formulario = () => {
+const Formulario = ({guardarResumen}) => {
 
     const [ datos, guardarDatos ] = useState({
         marca: '',
@@ -104,6 +104,10 @@ const Formulario = () => {
 
 
         //total
+        guardarResumen({
+            cotizacion: resultado,
+            datos
+        });
     }
 
     return (
